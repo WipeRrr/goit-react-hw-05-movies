@@ -6,17 +6,20 @@ export default function HomeCollection({ films }) {
   const defaultImg =
     'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
   return (
-    <ul className={css.movieList}>
-      {films.map(({ id, poster_path, name, title }) => (
-        <Link className={css.movieItem} key={id} to={`/movies/${id}`}>
-          <img
-            className={css.movieImg}
-            src={poster_path ? imgBaseUrl.concat(poster_path) : defaultImg}
-            alt={name}
-          />
-          <span className={css.text}> {title ?? name}</span>
-        </Link>
-      ))}
-    </ul>
+    <>
+      <h1 className={css.title}>Trending today</h1>
+      <ul className={css.movieList}>
+        {films.map(({ id, poster_path, name, title }) => (
+          <Link className={css.movieItem} key={id} to={`/movies/${id}`}>
+            <img
+              className={css.movieImg}
+              src={poster_path ? imgBaseUrl.concat(poster_path) : defaultImg}
+              alt={name}
+            />
+            <span className={css.text}> {title ?? name}</span>
+          </Link>
+        ))}
+      </ul>
+    </>
   );
 }

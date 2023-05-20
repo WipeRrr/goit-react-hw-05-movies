@@ -22,7 +22,7 @@ export default function MovieCard({ movie }) {
           width="350"
         />
         <div className={css.thumb}>
-          <h2 className={title}>
+          <h2 className={css.title}>
             {title} <span>({releaseDate})</span>
           </h2>
           <h3 className={css.text}>
@@ -34,12 +34,12 @@ export default function MovieCard({ movie }) {
           <h3 className={css.text}>
             Genres: <span className={css.stats}>{genresList}</span>
           </h3>
-          <ul>
+          <ul className={css.thumbButtons}>
             <li>
-              <Link to="cast">Cast</Link>
+              <Link className={css.button} to="cast">Cast</Link>
             </li>
             <li>
-              <Link to="reviews">Reviews</Link>
+              <Link className={css.button} to="reviews">Reviews</Link>
             </li>
           </ul>
         </div>

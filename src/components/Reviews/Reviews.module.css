@@ -1,0 +1,25 @@
+.thumb{
+    display: flex;
+    margin-top: 50px;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.author{
+        font: bold 20px Arial, sans-serif;
+    color: #089dcb;;
+    text-shadow: 2px 2px 1px #f5eded, -1px -1px 0 #0ff;
+    text-align: center;
+    margin-bottom: 15px;
+ 
+}
+.item{
+     font: bold 15px Arial, sans-serif;
+    color: rgb(126, 177, 134);
+    text-shadow: 2px 2px 1px #f5eded, -1px -1px 0 #0ff;
+    width: 800px;
+    text-align: center;
+    line-height: 1.4;
+}
