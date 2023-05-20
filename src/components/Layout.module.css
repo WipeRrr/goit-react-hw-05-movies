@@ -1,0 +1,21 @@
+nav{
+  display: flex;
+  justify-content:space-around;
+
+  list-style: none;
+  background: linear-gradient(#70e1f5, #ffd194);
+  
+}
+
+.NavLink{
+list-style: none;
+text-decoration: none;
+padding: 20px 20px;
+  font-size: 30px;
+  color: rgb(10, 3, 0);
+}
+
+.NavLink:hover,NavLink:focus{
+    color:rgb(0, 255, 115)
+}
+

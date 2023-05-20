@@ -1,0 +1,21 @@
+.MovieCard {
+  display: flex;
+  margin-top: 30px;
+  gap: 40px;
+  justify-content: center;
+}
+
+.text {
+  max-width: 1000px;
+  text-decoration: none;
+}
+
+.img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stats {
+  font-style: normal;
+  font-weight: normal;
+}

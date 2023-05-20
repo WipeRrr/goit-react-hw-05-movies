@@ -8,19 +8,31 @@
 .movieItem {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 280px;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  
-    overflow: hidden;
+
+  overflow: hidden;
+}
+.movieImg{
+  height: 420px;
 }
 
-.movieItem{
-    cursor: pointer;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.movieItem {
+  cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+     font: bold 20px Arial, sans-serif;
+    color: #089dcb;;
+    text-shadow: 2px 2px 1px #f5eded, -1px -1px 0 #0ff;
 }
-.movieItem:hover,.movieItem:focus{
 
-    transform: scale(1.03);
+.movieItem:hover,
+.movieItem:focus {
+  transform: scale(1.03);
+}
+
+.text{
+  margin-top: 10px;
 }
