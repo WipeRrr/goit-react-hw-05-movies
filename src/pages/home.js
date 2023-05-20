@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     getTrendingMovies().then(SetTreandingMovies);
   },[]);
-  console.log(treandingMovies);
+//   console.log(treandingMovies);
 
   return <HomeCollection films={treandingMovies}></HomeCollection>;
 };
