@@ -1,5 +1,6 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import css from './MovieCard.module.css';
+import PropTypes from 'prop-types';
 
 export default function MovieCard({ movie }) {
   const { poster_path, title, release_date, vote_average, overview, genres } =
@@ -24,7 +25,11 @@ export default function MovieCard({ movie }) {
         />
 
         <div className={css.thumb}>
-          <Link to={location.state?.from ?? '/'} className={css.backBtn} type="Link">
+          <Link
+            to={location.state?.from ?? '/'}
+            className={css.backBtn}
+            type="Link"
+          >
             ←Back
           </Link>
           <h2 className={css.title}>
@@ -57,3 +62,7 @@ export default function MovieCard({ movie }) {
     </>
   );
 }
+
+MovieCard.propTypes = {
+  movie: PropTypes.array.isRequired,
+};

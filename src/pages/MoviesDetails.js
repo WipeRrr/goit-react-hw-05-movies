@@ -11,7 +11,7 @@ const MovieDetails = () => {
     getMovieDetails(movieId)
       .then(Setmovies)
       .catch(error =>
-        Notify.warning('Movie Detail in progress',{ position: 'center' })
+        Notify.warning('Movie Detail in progress', { position: 'center' })
       );
   }, [movieId]);
 

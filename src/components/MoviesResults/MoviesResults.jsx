@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import css from './MoviesResults.module.css';
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 export default function MoviesResult({ movies }) {
     const location = useLocation();
   const imgBaseUrl = 'https://image.tmdb.org/t/p/w500/';
@@ -30,3 +31,7 @@ export default function MoviesResult({ movies }) {
     </ul>
   );
 }
+
+MoviesResult.propTypes = {
+  movies:PropTypes.array.isRequired,
+};
