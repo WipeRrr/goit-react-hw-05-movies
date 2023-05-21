@@ -14,6 +14,7 @@ export default function MovieCard({ movie }) {
   const defaultImg =
     'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
+  const backLink = location.state?.from ?? '/';
   return (
     <>
       <div className={css.MovieCard}>
@@ -25,11 +26,7 @@ export default function MovieCard({ movie }) {
         />
 
         <div className={css.thumb}>
-          <Link
-            to={location.state?.from ?? '/'}
-            className={css.backBtn}
-            type="Link"
-          >
+          <Link to={backLink} className={css.backBtn} type="Link">
             ←Back
           </Link>
           <h2 className={css.title}>
@@ -46,12 +43,20 @@ export default function MovieCard({ movie }) {
           </h3>
           <ul className={css.thumbButtons}>
             <li>
-              <Link className={css.button} to="cast">
+              <Link
+                className={css.button}
+                to={'cast'}
+                state={{ from: backLink }}
+              >
                 Cast
               </Link>
             </li>
             <li>
-              <Link className={css.button} to="reviews">
+              <Link
+                className={css.button}
+                to={'reviews'}
+                state={{ from: backLink }}
+              >
                 Reviews
               </Link>
             </li>
