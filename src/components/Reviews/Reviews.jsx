@@ -9,7 +9,7 @@ export const Reviews = () => {
   useEffect(() => {
     getMovieReviews(movieId).then(Setreview);
   }, [movieId]);
-  console.log(reviews);
+  // console.log(reviews);
   if (!reviews) {
     return;
   }

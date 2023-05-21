@@ -1,5 +1,5 @@
 .cast {
-    margin-top: 30px;
+    margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -32,4 +32,11 @@ gap: 30px;
 
 .textCharacter{
     color: rgb(126, 177, 134);
+}
+.error{
+          font: bold 20px Arial, sans-serif;
+    color: #089dcb;;
+    text-shadow: 2px 2px 1px #f5eded, -1px -1px 0 #0ff;
+    text-align: center;
+   
 }

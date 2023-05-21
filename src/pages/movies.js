@@ -1,28 +1,46 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { searchMovies } from '../services/API'
+import { searchMovies } from '../services/API';
 import MoviesResult from 'components/MoviesResults/MoviesResults';
+import SearchForm from 'components/SearchForm/SearchForm';
+
 const Movies = () => {
-   const [query, setQuery] = useState('');
-  const[movies,Setmovies]=useState(null)
+  // const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const queryId = searchParams.get('queryId');
+  const movieName = searchParams.get('movieName') ?? '';
+  const [moviesList, setMoviesList] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-  searchMovies(queryId).then(Setmovies)
-},[queryId])
-console.log(movies);
-  if (!movies) {
-  return
-}
+    if (movieName === '') {
+      return;
+    }
+    setMoviesList([]);
+
+    searchMovies(movieName).then(data => {
+      if (!data.length) {
+        setError(true);
+        return console.log(
+          'There is no movies with this request. Please, try again'
+        );
+      }
+      setError(false);
+      setMoviesList(data);
+    });
+  }, [movieName]);
+  // console.log(moviesList);
+  const handleSubmit = e => {
+    e.preventDefault();
+    const searchForm = e.currentTarget;
+    setSearchParams({ movieName: searchForm.elements.movieName.value });
+    searchForm.reset();
+  };
   return (
     <>
-      <form onSubmit={evt => setSearchParams({ queryId: evt.target.value })}>
-        <input type="text"></input>
-        <button type="submit"></button>
-      </form>
+      <SearchForm onSubmit={handleSubmit} />
+      {error && <p>There is no movies with this request. Please, try again</p>}
 
-      {/* <MoviesResult movie={movies}></MoviesResult> */}
+      <MoviesResult movies={moviesList}></MoviesResult>
     </>
   );
 };

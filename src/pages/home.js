@@ -1,4 +1,4 @@
-import HomeCollection from 'components/MoviesList/MoviesList';
+import MoviesList from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
 import { getTrendingMovies } from '../services/API';
 
@@ -10,7 +10,7 @@ const Home = () => {
   },[]);
 //   console.log(treandingMovies);
 
-  return <HomeCollection films={treandingMovies}></HomeCollection>;
+  return <MoviesList films={treandingMovies}></MoviesList>;
 };
 
 export default Home;

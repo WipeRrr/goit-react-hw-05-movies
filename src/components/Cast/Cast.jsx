@@ -19,6 +19,9 @@ export const Cast = () => {
   }
   return (
     <ul className={css.cast}>
+      {cast.length === 0 && (
+        <p className={css.error}>Cast is unavaible for this movie</p>
+      )}
       {cast.map(actor => (
         <li className={css.castItem} key={actor.id}>
           <img
@@ -32,7 +35,9 @@ export const Cast = () => {
           />
           <div className={css.textThumb}>
             <span className={css.textName}>{actor.name}</span>
-            <span className={css.textCharacter}>Character: {actor.character}</span>
+            <span className={css.textCharacter}>
+              Character: {actor.character}
+            </span>
           </div>
         </li>
       ))}
