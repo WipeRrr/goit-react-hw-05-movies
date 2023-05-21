@@ -7,8 +7,8 @@ import { Layout } from './Layout';
 // import { Reviews } from './Reviews/Reviews';
 import { lazy } from 'react';
 
-const Home = lazy(() => import('../pages/Home'));
-const Movies = lazy(() => import('../pages/Movies'));
+const Home = lazy(() => import('../pages/home'));
+const Movies = lazy(() => import('../pages/movies'));
 const MovieDetails = lazy(() => import('../pages/MoviesDetails'));
 const Cast = lazy(() => import('../components/Cast/Cast'));
 const Reviews = lazy(() => import('../components/Reviews/Reviews'));

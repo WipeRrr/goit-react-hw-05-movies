@@ -28,7 +28,6 @@ const Movies = () => {
       setMoviesList(data);
     });
   }, [movieName]);
-  // console.log(moviesList);
   const handleSubmit = e => {
     e.preventDefault();
     const searchForm = e.currentTarget;
